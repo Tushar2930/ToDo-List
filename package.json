@@ -1,0 +1,15 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "A To do list to manage deadlines and increase productivity",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TUSHAR SHINGANE",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
