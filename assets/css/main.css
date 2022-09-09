@@ -54,6 +54,8 @@ body {
     border-radius: 10px;
     border-width: 3px;
     border-color: #09f;
+    font-size: xx-large;
+    font-family: auto;
 
 }
 
@@ -67,6 +69,8 @@ body {
     width: 40%;
     border-radius: 10px;
     border: 2px #09f solid;
+    font-size: large;
+    font-weight: 500;
 
 }
 
@@ -75,6 +79,8 @@ body {
     /* height: 30%; */
     border-radius: 10px;
     border: 2px #09f solid;
+    font-size: x-large;
+    font-family: auto;
 }
 
 .second {
