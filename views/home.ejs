@@ -11,7 +11,7 @@
     <header>
 
         <div class="head">
-            <i class="fa-solid fa-list-check"></i>
+            <i class="fa-solid fa-list-check fa-2x"></i>
             <h1>TO DO LIST</h1>
         </div>
         <div class="day">
@@ -23,13 +23,13 @@
         <div class="in">
             <form action="/create" method="POST">
                 <div class="cont">
-                    <textarea name="task" class="taskbar" cols="50" rows="6"
+                    <textarea name="task" class="taskbar" cols="50" rows="2"
                         placeholder="  Enter your task...."></textarea>
                     <div class="second"><select class="category" name="category">
                             <option value="">--Please choose an option--</option>
-                            <option value="personal">PERSONAL</option>
-                            <option value="work">WORK</option>
-                            <option value="grocery">GROCERY-LIST</option>
+                            <option value="PERSONAL">PERSONAL</option>
+                            <option value="WORK">WORK</option>
+                            <option value="GROCERY-LIST">GROCERY-LIST</option>
                         </select>
                         <input type="date" class="date" name="date">
                     </div>
@@ -43,19 +43,21 @@
             </form>
         </div>
         <div class="disp">
-            <h1>TASKS</h1>
+            <h1 class="lasthead">TASKS</h1>
             <ol class="ordered">
 
                 <% for(let list of lists) {%>
                     <div class="liem">
                         <div class="but">
                             <li>
-                                <%= list.task %>
+                                <div class="task-style">
+                                    <%= list.task %>
+                                </div>
+                                <br>
+                                <%= list.category %>
                                     <br>
-                                    <%= list.category %>
-                                        <br>
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <%= list.date %>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <%= list.date %>
                             </li>
                         </div>
                         <div class="dltbtn">
