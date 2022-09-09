@@ -19,39 +19,49 @@
         </div>
     </header>
 
-    <section class="in">
-        <form action="/create" method="POST">
-            <div class="cont">
-                <textarea name="task" class="taskbar" cols="50" rows="6" placeholder="  Enter your task...."></textarea>
-                <div class="second"><select class="category" name="category">
-                        <option value="">--Please choose an option--</option>
-                        <option value="personal">PERSONAL</option>
-                        <option value="work">WORK</option>
-                        <option value="grocery">GROCERY-LIST</option>
-                    </select>
-                    <input type="date" class="date" name="date">
+    <section class="sec">
+        <div class="in">
+            <form action="/create" method="POST">
+                <div class="cont">
+                    <textarea name="task" class="taskbar" cols="50" rows="6"
+                        placeholder="  Enter your task...."></textarea>
+                    <div class="second"><select class="category" name="category">
+                            <option value="">--Please choose an option--</option>
+                            <option value="personal">PERSONAL</option>
+                            <option value="work">WORK</option>
+                            <option value="grocery">GROCERY-LIST</option>
+                        </select>
+                        <input type="date" class="date" name="date">
+                    </div>
+                    <div class="third">
+                        <input type="submit" class="button">
+                        <a href="reset" class="delete" role="button" name="resetForm">
+                            <div class="lst"> Reset</div>
+                        </a>
+                    </div>
                 </div>
-                <div class="third">
-                    <input type="submit" class="button">
-                    <input type="reset" class="delete">
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
         <div class="disp">
             <h1>TASKS</h1>
-            <div class="items"></div>
-            <ol>
+            <ol class="ordered">
 
                 <% for(let list of lists) {%>
-                    <li>
-                        <%= list.task %>
-                            <br>
-                            <%= list.category %>
-                                <br>
-                                <%= list.date %>
-                    </li>
-
-
+                    <div class="liem">
+                        <div class="but">
+                            <li>
+                                <%= list.task %>
+                                    <br>
+                                    <%= list.category %>
+                                        <br>
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        <%= list.date %>
+                            </li>
+                        </div>
+                        <div class="dltbtn">
+                            <a href="/delete/?id=<%= list._id %>"> <i class="fa-solid fa-trash-can fa-2x"></i></a>
+                        </div>
+                    </div>
                     <% } %>
 
             </ol>

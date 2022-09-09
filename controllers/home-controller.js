@@ -29,3 +29,23 @@ module.exports.create = function (req, res) {
         return res.redirect("/");
     });
 }
+
+module.exports.delete = function (req, res) {
+    let id = req.query.id;
+    List.findByIdAndDelete(id, function (err) {
+        if (err) {
+            console.log("ERROR");
+        }
+        return res.redirect("/");
+    })
+}
+
+module.exports.reset = function (req, res) {
+    List.deleteMany({}, function (err) {
+        if (err) {
+            console.log("ERROR");
+            return;
+        }
+        return res.redirect("/");
+    })
+}
