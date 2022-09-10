@@ -11,7 +11,7 @@ mongoose
         console.log("Mongo Is Running");
     })
     .catch((err) => {
-        console.log("Mongo Error");
+        console.log(err);
     });
 
 // const db = mongoose.connection;
